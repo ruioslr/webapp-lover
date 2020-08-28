@@ -9,7 +9,7 @@ module.exports = {
     entry: path.resolve(__dirname, '../src/index'),
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: 'index.js'
+        filename: 'index.[hash].js'
     },
     resolve: {
         extensions: [".js", ".json", '.jsx', '.ts', '.tsx'],
