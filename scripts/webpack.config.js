@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 const HtmlPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, '../src/index'),
@@ -13,8 +14,9 @@ module.exports = {
     resolve: {
         extensions: [".js", ".json", '.jsx', '.ts', '.tsx'],
         alias: {
-            '@rc': path.resolve(__dirname, '../RC'),
-            '@antd': path.resolve(__dirname, '../Antd')
+            'components': path.resolve(__dirname, '../src/components'),
+            'pages': path.resolve(__dirname, '../src/pages'),
+            'src': path.resolve(__dirname, '../src'),
         }
     },
     mode: "development",
@@ -39,7 +41,10 @@ module.exports = {
                 use: [{
                     loader: "style-loader"
                 }, {
-                    loader: "css-loader"
+                    loader: "css-loader",
+                    options: {
+                        modules: true
+                    }
                 }, {
                     loader: "less-loader",
                     options: {
@@ -60,8 +65,13 @@ module.exports = {
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlPlugin({
-            template: path.resolve(__dirname, '../src/index.html' )
-        })
+            template: path.resolve(__dirname, '../src/index.ejs' ),
+            BUILD_TIME: new Date().toLocaleString()
+        }),
+        new CopyWebpackPlugin({patterns: [{
+            from: path.resolve(__dirname, '../src/adjust-rem.js'),
+            to: path.resolve(__dirname, '../dist'),
+        }]}),
     ]
 
 };

@@ -7,8 +7,16 @@
     "**/*.spec.ts"
   ],
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "components/*": [
+        "./src/components/*"
+      ],
+      "pages/*": [
+        "./src/pages/*"
+      ]
+    },
     "outDir": "./dist/",
-
     "noImplicitAny": true,
     "target": "es5",
     "jsx": "react",
