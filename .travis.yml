@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - node
+cache: yarn
+script:
+  - yarn build
+before_install:
+  - openssl aes-256-cbc -K $encrypted_f005b171018f_key -iv $encrypted_f005b171018f_iv
+    -in id_rsa.enc -out ~/.ssh/id_rsa -d
+addons:
+  ssh_known_hosts:
+    - 139.159.134.18
+after_success:
+  - chmod 600 ~/.ssh/id_rsa
+  - ssh ruios@139.159.134.18 -o StrictHostKeyChecking=no 'cd ~/blog/blog-front && git
+    pull &&  yarn install && yarn run build'
