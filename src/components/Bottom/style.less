@@ -1,7 +1,29 @@
 @import '../../less/base.less';
 
 .bottom {
+  position: fixed;
+  z-index: 9;
+  height: 2rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: darkcyan;
   font-size: 1rem;
-  width: 100vh;
-  color: @font-color;
+  color: @font-black-color;
+  display: flex;
+  flex-direction: row;
+  .bottomItem {
+    flex: 1;
+    text-align: center;
+    line-height: 2rem;
+    font-size: .8rem;
+    color: @font-white-color;
+  }
 }
+
+.hide {
+  display: none;
+}
+
+
+

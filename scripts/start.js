@@ -10,6 +10,7 @@ const serverOption = {
     open: true,
     hot: true,
     stats: 'minimal',
+    historyApiFallback: true,
 };
 
 
