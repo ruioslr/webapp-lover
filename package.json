@@ -9,6 +9,10 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0"
   },
+  "scripts": {
+    "start": "node ./scripts/start.js",
+    "build": "node ./scripts/build.js"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
