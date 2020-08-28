@@ -58,11 +58,11 @@ function AnimationRoute() {
 
     const transitionClasses = {
         enter: "animate__animated",
-        enterActive: "animate__slideInRight",
+        enterActive: "animate__bounceInRight",
         // enterDone: "animate__animated",
         // exitDone: "animate__animated",
         exit: "animate__animated",
-        exitActive: "animate__slideOutLeft"
+        exitActive: "animate__bounceOutLeft"
     };
 
     return <div className={styles.main}>
