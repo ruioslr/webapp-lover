@@ -1,0 +1,22 @@
+{
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ],
+  "compilerOptions": {
+    "outDir": "./dist/",
+
+    "noImplicitAny": true,
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    // 与模块相关的几个属性
+    "module": "es6",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node"
+  }
+}
