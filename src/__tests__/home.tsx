@@ -2,7 +2,7 @@ import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
 
-import Home from '../pages/home';
+import My from '../pages/My';
 
 let container: Element = null;
 beforeEach(() => {
@@ -19,7 +19,7 @@ afterEach(() => {
 describe('home页面', () => {
   it('是否渲染', () => {
     act(() => {
-      render(<Home />, container);
+      render(<My />, container);
     });
     expect(container.querySelector('div')).not.toBeNull();
   });
