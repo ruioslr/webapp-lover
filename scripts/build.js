@@ -3,7 +3,7 @@ const config = require('./webpack.config');
 
 const compiler = webpack(config);
 
-compiler.run()
+compiler.run(() => {})
 
 
 

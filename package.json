@@ -20,10 +20,11 @@
     "prettier": "prettier -c ./src",
     "prettier:fix": "prettier --write ./src",
     "lint": "eslint 'src/**/*.[jt]sx'",
-    "lint:fix": "eslint --fix 'src/**/*.[jt]sx'"
+    "lint:fix": "eslint --fix 'src/**/*.[jt]sx'",
+    "check": "yarn run prettier && yarn run lint"
   },
   "lint-staged": {
-    "src/**/*.[jt]sx": ["yarn run pretter", "yarn  run lint"]
+    "src/**/*.[jt]sx": "yarn run check"
   },
   "husky": {
     "hooks": {
