@@ -23,17 +23,10 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js(x)*$/,
+                test: /\.[jt]sx?$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        // plugins:[['import', {
-                        //     "libraryName": "antd",
-                        //     "style": true,   // or 'css'
-                        // }]],
-                        presets: ['@babel/preset-env', "@babel/preset-react"]
-                    }
                 }
             },
             {
@@ -62,11 +55,6 @@ module.exports = {
                         }
                     }
                 }]
-            },
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
             },
         ]
     },
