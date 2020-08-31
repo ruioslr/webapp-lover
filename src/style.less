@@ -3,17 +3,18 @@
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0
+  bottom: 0;
 }
-
 
 :global {
   //enter是入场前的刹那（点击按钮），appear指页面第一次加载前的一刹那（自动）
-  .fade-enter, .fade-appear {
+  .fade-enter,
+  .fade-appear {
     opacity: 0;
   }
   //enter-active指入场后到入场结束的过程，appear-active则是页面第一次加载自动执行
-  .fade-enter-active, .fade-appear-active {
+  .fade-enter-active,
+  .fade-appear-active {
     opacity: 1;
     transition: opacity 1s ease-in;
   }
